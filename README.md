@@ -120,7 +120,7 @@ http://127.0.0.1:8000
 যেকোনো প্রকার কারিগরি সহায়তা, বাগ রিপোর্ট, সফটওয়্যার কাস্টমাইজেশন অথবা প্রজেক্ট সংক্রান্ত সাহায্যের জন্য নিচের ঠিকানায় যোগাযোগ করুন:
 
 - 🌐 **Website:** [http://tomal-ict.com/](http://tomal-ict.com/)
-- 📱 **Helpline:** `+880 1728-327173`
+- 📱 **Helpline:** `+880 1720-331586 +880 1705-385853`
 - ✉️ **Email:** info@prox.net.bd
 - 🏢 **Organization:** ProxNet BD
 - 📍 **Location:** Dhaka, Bangladesh
