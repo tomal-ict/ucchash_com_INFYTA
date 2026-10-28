@@ -1,0 +1,28 @@
+[05-May-2025 14:46:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/creativedesignbd/ecommerce3.creativedesign.com.bd/config/app.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/creativedesignbd/ecommerce3.creativedesign.com.bd/config/app.php on line 18
+[08-May-2025 11:43:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/creativedesignbd/ecommerce3.creativedesign.com.bd/config/app.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/creativedesignbd/ecommerce3.creativedesign.com.bd/config/app.php on line 18
+[04-Jan-2026 17:56:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/infytaco/public_html/1_Main_Domain/ucchash.com/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/infytaco/public_html/1_Main_Domain/ucchash.com/config/database.php on line 18
+[11-May-2026 13:23:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/infytaco/public_html/1_Main_Domain/ucchash.com/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/infytaco/public_html/1_Main_Domain/ucchash.com/config/database.php on line 18
+[11-May-2026 13:23:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/infytaco/public_html/1_Main_Domain/ucchash.com/config/app.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/infytaco/public_html/1_Main_Domain/ucchash.com/config/app.php on line 18
+[14-May-2026 16:12:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/infytaco/public_html/1_Main_Domain/ucchash.com/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/infytaco/public_html/1_Main_Domain/ucchash.com/config/database.php on line 18
+[14-May-2026 16:12:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/infytaco/public_html/1_Main_Domain/ucchash.com/config/app.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/infytaco/public_html/1_Main_Domain/ucchash.com/config/app.php on line 18

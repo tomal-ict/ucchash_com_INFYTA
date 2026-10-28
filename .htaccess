@@ -1,0 +1,72 @@
+# ----------------------------------------------------------------------
+# Security Hardening & Laravel Routing
+# ----------------------------------------------------------------------
+
+<IfModule mod_negotiation.c>
+    Options -MultiViews -Indexes
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. Block access to hidden files and directories (starting with a dot)
+    # Allow .well-known for SSL certificates
+    RewriteCond %{REQUEST_URI} !^/\.well-known/ [NC]
+    RewriteRule (^|/)\.(?!well-known) - [F,L]
+
+    # 2. Block access to sensitive files by extension or name
+    RewriteRule (^|/)(composer\.(json|lock)|package(-lock)?\.json|phpunit\.xml|artisan|vite\.config\.js|\.user\.ini|php\.ini|.*\.sql|.*\.log|.*\.bak|.*\.sh)$ - [F,L,NC]
+
+    # 3. Block direct web access to sensitive framework folders
+    RewriteRule ^(_security_quarantine_backup|app|bootstrap|config|database|docker|lang|resources|routes|storage|tests|vendor)(/|$) - [F,L,NC]
+
+    # 4. Block common malicious exploit and injection queries
+    RewriteCond %{QUERY_STRING} (eval\(|base64_decode|gzinflate|str_rot13|concat\(|<script|proc/self/environ) [NC]
+    RewriteRule .* - [F,L]
+
+    # 5. Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # 6. Redirect Trailing Slashes If Not A Folder
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # 7. Send Requests To Front Controller
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Security Headers
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Protect all .env files
+<FilesMatch "^\.env">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Protect database backups and sensitive scripts
+<FilesMatch "\.(sql|log|ini|sh|bak|cfg)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>

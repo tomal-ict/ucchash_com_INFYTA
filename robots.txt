@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /admin
+Disallow: /storage/
+Disallow: /customer/account
+Disallow: /customer/orders
+Disallow: /customer/invoice
